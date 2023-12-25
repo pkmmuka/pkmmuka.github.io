@@ -31,7 +31,7 @@
   width: 100%;
   font-size: 15px;
   padding: 12px 20px 12px 40px;
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   margin-bottom: 1px;
   margin-top: 1px;
   text-align: center;
@@ -79,7 +79,7 @@ li {
 
 .center {
   text-align: center;
-  border: 2px solid green;
+  border: 1px solid green;
 }
 
 .navbar1 {
@@ -88,8 +88,16 @@ li {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
+
+
+input[type='radio']:checked + label {
+    background-color: ;
+    border:;
+    Color: cyan;
+}
 </style>
 
 
@@ -98,6 +106,9 @@ li {
 
 
 <body>
+
+
+
 
 
 <!-- banner logo -->
@@ -109,17 +120,46 @@ li {
     -->    
     <div class="col " style="background-color:#dff0d8;">
       <span style="padding:2px;font-size:10px;">UPTD Puskesmas Muka</span>
-      <img src="https://dl.dropboxusercontent.com/s/3f4gtjp00d3fmi4/Log-Transfaran-238px.png?&dl=0" style="height:20px;padding-right:2px;" class="img-responsive pull-right" alt="UPTD Puskesmas Muka">
+      <img src="https://dl.dropboxusercontent.com/s/3f4gtjp00d3fmi4/Log-Transfaran-238px.png?&dl=0" style="height:20px;padding-right:2px;" class="img-responsive pull-right" alt="UPTD Puskesmas Muka"/>
     </div>
-  </div>
+    
+<div class="center" style="background:#3e3e42;color:white;">
+    
+<label for="Trust0" style="display: none;">
+    <input type="radio" id="Trust0" name="Pegawai" value="" checked="checked" />noDesplay becaus no value<img src="http://svr/Forms//img/Theme/Awardco/Trust1.png"/>
+</label>
+
+
+
+<input name="Pegawai" type="radio" id="Trust1" value="ASN" style="cursor:pointer;display:none;"/>
+<label for="Trust1" style="cursor:pointer;" >
+ASN &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:5px;" ></span>
+</label> 
+        
+        
+<span class="glyphicon "></span> <span class="glyphicon glyphicon-transfer"></span>
+        
+        
+<input name="Pegawai" type="radio" id="Trust2" value="NonASN" style="cursor:pointer;display:none;" />
+<label for="Trust2" style="cursor:pointer;" >
+<span class="glyphicon glyphicon-backward" style="margin-left:5px;" ></span>&nbsp; NonASN
+</label>
 
 </div>
 
 
+  </div><!-- row -->
+
+</div> <!-- container1-->
 
 
 
-<div style="margin-top:22px;">
+    
+
+<div id="CategoryASN" class="tampil" style="display: none;"><!-- ASN -->
+
+
+<div style="margin-top:65px;">
     
     
     
@@ -271,7 +311,7 @@ li {
   
 
 
-<input type="text" id="myInput" onkeyup="myFunction()" autocomplete="off" placeholder="Search for names . . ." title="Type in a name / ketikan nama yang akan cari">
+<input type="text" id="myInput" onkeyup="myFunction1()" autocomplete="off" placeholder="Search for names . . ." title="Type name / Filter name">
 
 <ul id="myUL" style="display:;">
 
@@ -317,7 +357,7 @@ li {
 </ul>
 
 <script>
-function myFunction() {
+function myFunction1() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -347,18 +387,54 @@ $(".afterclick").click(function (){
 </div>
 
 
+</div> <!-- ASN -->
+
+
+
+
+
+<div id="CategoryNonASN" class="tampil" style="display: none;"><!-- NonASN -->
+
+<div style="margin-top:65px;">NonASN Selected</div>
+        
+</div> <!-- NonASN -->
+
+
+
+
+
   <!-- Footer element item -->
-<div class="footer">
+<div class="footer" style="margin-top:38px;">
 
     <div class="col text-center" style="background-color:lavenderblush;">
-      <span style="padding:2px;font-size:5px;">UPTD Puskesmas Muka @54n
+      <span style="padding:2px;font-size:5px;">UPTD Puskesmas Muka @ 54n
       
       </span>
       
     </div>
 
-
 </div>
+<!-- Footer element item -->
+
+
+
+
+
+<!-- hide or show radiobutton -->
+<script>
+$(document).ready(function() {
+    $("input[name$='Pegawai']").click(function() {
+        var tampildaftar = $(this).val();
+
+        $("div.tampil").hide();
+        $("#Category" + tampildaftar).show();
+    });
+});
+</script>
+
+
+
+
 
 </body>
 </html>
