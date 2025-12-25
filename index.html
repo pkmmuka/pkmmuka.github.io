@@ -24,6 +24,7 @@
   box-sizing: border-box;
 }
 
+/* Start id ASN */
 #myInput {
   background-image: url('https://www.w3schools.com/css/searchicon.png');
   background-position: 10px 12px;
@@ -51,6 +52,7 @@
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: 10px; /* Prevent double borders */
+  margin-bottom: 10px; 
   background-color: #fdfdfd;
   padding: 12px;
   text-decoration: none;
@@ -76,6 +78,8 @@ li {
     margin-right: 20px;
 }
 */
+
+/* End id ASN */
 
 .center {
   text-align: center;
@@ -108,6 +112,30 @@ body {
   background-size: cover;
   /*background-size: 90% 90%;*/
 }
+
+
+/* Start Zoom Image */
+.zoom1 {
+  padding: 0.4px;
+  background-color: #d5dba8;
+  transition: transform .2s;
+  width: 8%;
+  height: 8%;
+  /*margin: 0 auto;*/
+  margin-top: -12px;
+  margin-bottom: 0px;
+  float: right ;
+}
+
+.zoom1:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(2.7); /* Mozzila FireFox */
+  box-shadow: 0 0 5px 1px rgba(0, 140, 186, 0.5);
+}
+
+/* End Zoom Image */
+
 </style>
 
 
@@ -130,9 +158,20 @@ body {
     -->    
     <div class="col " style="background-color:#dff0d8;">
       <span style="padding:2px;font-size:10px;">Puskesmas Muka</span>
-      <img src="https://dl.dropboxusercontent.com/s/3f4gtjp00d3fmi4/Log-Transfaran-238px.png?&dl=0" style="height:20px;padding-right:2px;" class="img-responsive pull-right" alt="UPTD Puskesmas Muka"/>
+      <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" style="height:20px;padding-right:2px;" class="img-responsive pull-right" alt="UPTD Puskesmas Muka"/>
     </div>
-    
+
+<!--
+Logo Tanpa UPTD 
+
+https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0
+
+Logo UPTD
+
+https://dl.dropboxusercontent.com/s/3f4gtjp00d3fmi4/Log-Transfaran-238px.png?&dl=0
+
+-->
+
 <div class="center" style="background:rgba(0,0,0,.5);color:white;">
 
 <span style=display:none;>
@@ -509,9 +548,9 @@ A S N &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:
 
    <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1vRmnpjsG3JSpbe2yVaJQX76FL7nUlrd_?usp=sharing' + location.search)">49. Dede Abdurohman,.</a></li>
    
-
    
 </ul>
+
 
 <script>
 function myFunction1() {
@@ -629,9 +668,13 @@ $(".afterclick").click(function (){
 
 <ul id="myUL2" style="display:;">
 
-  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KOaOvzJz4jxmuIGeGsniYhavO_62E-NZ?usp=sharing' + location.search)">01. Muthia Khusnul Khotimah</a></li>
+  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KOaOvzJz4jxmuIGeGsniYhavO_62E-NZ?usp=sharing' + location.search)">01. Muthia Khusnul Khotimah
+  <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" class="img-thumbnail zoom1" align="center" alt="Cinque Terre"/>
+  </a></li>
 
-  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/114tIGIaw0CWdxcQDkq5qkpNtvEYOKw_t?usp=sharing' + location.search)">02. Neng Yunita Hamdani Putri</a></li>
+  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/114tIGIaw0CWdxcQDkq5qkpNtvEYOKw_t?usp=sharing' + location.search)">02. Neng Yunita Hamdani Putri
+  <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" class="img-thumbnail zoom1" align="center" alt="Cinque Terre">
+  </a></li>
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1Qb6d_N0jWvzsiGJuCjEqVRV1DEk76jlf?usp=sharing' + location.search)">03. M Irgi Fauzi</a></li>
   
@@ -672,7 +715,7 @@ $(".afterclick2").click(function (){
 
 
 <style>  
-
+/* Start id NonASN */
 #myInput2 {
   background-image: url('https://www.w3schools.com/css/searchicon.png');
   background-position: 10px 12px;
@@ -700,6 +743,7 @@ $(".afterclick2").click(function (){
 #myUL2 li a {
   border: 1px solid #ddd;
   margin-top: 10px; /* Prevent double borders */
+  margin-bottom: 10px; 
   background-color: #fdfdfd;
   padding: 12px;
   text-decoration: none;
@@ -726,6 +770,8 @@ li {
 }
 */
 
+/* End id NonASN */
+
 </style>
 
 
@@ -744,8 +790,8 @@ li {
 <div class="footer" style="margin-top:68px;">
 
     <div class="col text-center" style="background-color:lavenderblush;">
-      <span style="padding:2px;font-size:8px;"><b>&#9829; Puskesmas Muka @ 54n &#9829;
-      </b><!-- title=" - - &#9829; UPTD Puskesmas Muka @ 54n - - WiTH &#9829; - - " -->
+      <span style="padding:2px;font-size:9px;"><b>&#9829; &#9829; Puskesmas Muka @ 54n &#9829; &#9829;
+      </b><!-- title=" - - &#9829;  UPTD Puskesmas Muka @ 54n - - WiTH &#9829; - - " -->
       </span><br/>
       
     </div>
@@ -823,6 +869,7 @@ document.getElementById('ct4').innerHTML = x3;
 
 </body>
 </html>
+
 
 
 
