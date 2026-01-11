@@ -24,8 +24,8 @@
   box-sizing: border-box;
 }
 
-/* Start id ASN */
-#myInput {
+/* Start id ASN & PROG & NonASN */
+#myInput, #myInput2, #myInput3 {
   background-image: url('https://www.w3schools.com/css/searchicon.png');
   background-position: 10px 12px;
   background-repeat: no-repeat;
@@ -36,22 +36,18 @@
   margin-bottom: 1px;
   margin-top: 1px;
   text-align: center;
-  
-/*  background-position: left;*/
-
   background-repeat: no-repeat;
-
 }
 
-#myUL {
+#myUL, #myUL2, #myUL3 {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#myUL li a {
+#myUL li a, #myUL2 li a, #myUL3 li a {
   border: 1px solid #ddd;
-  margin-top: 10px; /* Prevent double borders */
+  margin-top: 10px; 
   margin-bottom: 10px; 
   background-color: #fdfdfd;
   padding: 12px;
@@ -61,25 +57,10 @@
   display: block
 }
 
-#myUL li a:hover:not(.header) {
+#myUL li a:hover:not(.header), #myUL2 li a:hover:not(.header), #myUL3 li a:hover:not(.header) {
   background-color: #eee;
   font-size: large;
 }
-
-/*ul {
-    width:100%;
-    margin-left: 0;
-    margin-bottom: 0
-} 
-
-li { 
-     list-style-type: none;
-    display: inline-block;
-    margin-right: 20px;
-}
-*/
-
-/* End id ASN */
 
 .center {
   text-align: center;
@@ -95,24 +76,22 @@ li {
   z-index: 1;
 }
 
-
-
-input[type='radio']:checked + label {
-    background-color: ;
-    border:;
-    Color: cyan;
+/**input[type='radio']:checked + label {
+    color: cyan;
 }
-
-
+**/
+    input[type='radio']:checked + label {
+        color: #00ffff;
+        font-weight: bold;
+        text-shadow: 0 0 5px cyan;
+    }
 
 body {
   background-image: url('https://www.w3schools.com/w3css/img_lights.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  /*background-size: 90% 90%;*/
 }
-
 
 /* Start Zoom Image */
 .zoom1 {
@@ -120,21 +99,17 @@ body {
   background-color: #d5dba8;
   transition: transform .2s;
   width: 43px;
-  /*height: 4%;*/
-  /*margin: 0 auto;*/
   margin-top: -12px;
   margin-bottom: 0px;
   float: right ;
 }
 
 .zoom1:hover {
-  -ms-transform: scale(2.7); /* IE 9 */
-  -webkit-transform: scale(2.7); /* Safari 3-8 */
-  transform: scale(2.8); /* Mozzila FireFox */
+  -ms-transform: scale(2.7); 
+  -webkit-transform: scale(2.7); 
+  transform: scale(2.8); 
   box-shadow: 0 0 5px 1px rgba(0, 140, 186, 0.5);
 }
-
-/* End Zoom Image */
 
 </style>
 
@@ -153,47 +128,40 @@ body {
 <div class="container-fluid navbar1">
 
   <div class="row">
-  <!--
-    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    -->    
     <div class="col " style="background-color:#dff0d8;">
       <span style="padding:2px;font-size:10px;">Puskesmas Muka</span>
       <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" style="height:20px;padding-right:2px;" class="img-responsive pull-right" alt="UPTD Puskesmas Muka"/>
     </div>
 
-<!--
-Logo Tanpa UPTD 
-
-https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0
-
-Logo UPTD
-
-https://dl.dropboxusercontent.com/s/3f4gtjp00d3fmi4/Log-Transfaran-238px.png?&dl=0
-
--->
-
 <div class="center" style="background:rgba(0,0,0,.5);color:white;">
 
-<span style=display:none;>
-<input type="radio" id="Trust0" name="Pegawai" value="none0" checked="checked"/><!-- checked="checked"  -->
-<label for="Trust0" >
-none0<span class="glyphicon glyphicon-forward" style="margin-right:5px;" ></span>
-</label>
+<span style="display:none;">
+<input type="radio" id="Trust0" name="Pegawai" value="none0" checked="checked"/>
+<label for="Trust0" >none0</label>
 </span>
 
+<!-- Radio ASN -->
 <input name="Pegawai" type="radio" id="Trust1" value="ASN" style="cursor:pointer;display:none;"/>
 <label for="Trust1" style="cursor:pointer;font-size:16px;" >
-A S N &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:5px;" ></span>
+A S N &nbsp;<span class="glyphicon glyphicon-user"></span>
 </label> 
         
-        
-<span class="glyphicon "></span> <span class="glyphicon glyphicon-transfer"></span>
-        
-        
+<span class="glyphicon glyphicon-transfer" style="margin:0 5px;"></span>
+
+<!-- Radio NonASN -->
 <input name="Pegawai" type="radio" id="Trust2" value="NonASN" style="cursor:pointer;display:none;" />
 <label for="Trust2" style="cursor:pointer;font-size:16px;" >
-<span class="glyphicon glyphicon-backward" style="margin-left:5px;" ></span>&nbsp; NonASN
+NonASN &nbsp;<span class="glyphicon glyphicon-tags"></span>
 </label>
+
+<span class="glyphicon glyphicon-transfer" style="margin:0 5px;"></span>
+
+<!-- Radio PROG (TAMBAHAN BARU) -->
+<input name="Pegawai" type="radio" id="Trust3" value="PROG" style="cursor:pointer;display:none;" />
+<label for="Trust3" style="cursor:pointer;font-size:16px;" >
+PROG &nbsp;<span class="glyphicon glyphicon-briefcase"></span>
+</label>
+
 
 </div>
 <div class="center w3-round"><span id='ct4' style="background-color: #f9f9f9; color:darkred; font-size:12px;"></span></div>
@@ -203,40 +171,20 @@ A S N &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:
 </div> <!-- container1-->
 
 
-<div id="Categorynone0" class="tampil" style="display: none;"><!-- none0 -->
-
+<div id="Categorynone0" class="tampil" style="display: none;">
 <div style="margin-top:94px;">&nbsp;</div>
-        
-</div> <!-- none0 -->
+</div>
 
 
 
-    
-
-<div id="CategoryASN" class="tampil" style="display: none;"><!-- ASN -->
-
-
+<!-- KATEGORI ASN -->
+<div id="CategoryASN" class="tampil" style="display: none;">
 <div style="margin-top:94px;">
-    
-    
-    
-    
-    
-<!-- carusel link by name -->
 <div class="container">
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel"  style="background-color:white;">
-    <!-- Indicators
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol> -->
-
-    <!-- Wrapper for slides <img src="chicago.jpg" alt="Chicago" style="width:100%;"> -->
     <div class="carousel-inner center">
     
-      <div class="item">      
+     <div class="item">      
         <a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1yfg5kIi87XxRXA3ZTZY5LQF-lKc-rsTO?usp=drive_link' + location.search)">01. drg. Annisa Pristiani</a>
       </div>
 
@@ -432,39 +380,19 @@ A S N &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:
         <a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1vRmnpjsG3JSpbe2yVaJQX76FL7nUlrd_?usp=sharing' + location.search)">49. _Dede Abdurohman,</a>
       </div>
       
-
-      
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span style="font-size:20px" class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span style="font-size:20px" class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
 </div>
 
-
-
-
-
-<!-- list link by name and search item in content ul -->
 <div class="container">
 <div class="text-center" style="background-color:rgba(0,0,0,.0001);color:#450202;border: 1px solid cyan;font-weight:bold;">
-  <span style="color:White;">Google Drive<br>
-  Links - <b>ASN</b></span>
-  </div>
-  <div class="list-group">
-  
-
-
-<input type="text" id="myInput" onkeyup="myFunction1()" autocomplete="off" placeholder="Search for names . . ." title="Type name / Filter name">
-
-<ul id="myUL" style="display:;">
+  <span style="color:White;">Google Drive<br>Links - <b>ASN</b></span>
+</div>
+<div class="list-group">
+<input type="text" id="myInput" onkeyup="myFunction1()" autocomplete="off" placeholder="Search for names . . .">
+<ul id="myUL">
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1yfg5kIi87XxRXA3ZTZY5LQF-lKc-rsTO?usp=drive_link' + location.search)">01. drg. Annisa Pristiani
   <img src="https://dl.dropboxusercontent.com/s/gz2v4pm7yecckrp1aheof/Kapus.jpg?rlkey=yp5o1bfdgj3ngbnqi1d53kk18&st=6k492mp5&dl=0" class="img-thumbnail zoom1" align="center" alt="pkmmuka"/>
@@ -477,158 +405,128 @@ A S N &nbsp;&nbsp;<span class="glyphicon glyphicon-forward" style="margin-right:
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/10DBYX0mau2EHEGqe6MU_vYZ5kxyKa9La?usp=drive_link' + location.search)">03. Supiyati</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KoDLMXCbXg3Q9jTFvSx3_JzeRonTLCEA?usp=drive_link' + location.search)">04. Tiarmauli Samosir</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1sl7gML8jVDlqvIHWGsMeqkNElEK5QuEa?usp=drive_link' + location.search)">05. Dina Hariyati</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1bpKLHpeWi5pqaP_apuyksJU5bnYmjiVl?usp=drive_link' + location.search)">06. Heri Mulyana</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/18RK-EcpYmVUqquWDvWncYQgi9kCjxDFF?usp=drive_link' + location.search)">07. Eneng Elis Mutmainnah</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1PVDsWfGtIwLvIzDyInCLnmW1AResjWqT?usp=drive_link' + location.search)">08. dr. Siti Cholifah</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KE0ezL95NaukJyzqATRVhWGQIVoz7RDG?usp=drive_link' + location.search)">09. Cecep Supangkat</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1CRiSGZjPsrvmzPYlmy5_ddNitL8QYii_?usp=drive_link' + location.search)">10. Royani</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/180KjpPWN33hIleJMfmvLNgvxy0iQFe6k?usp=drive_link' + location.search)">11. Rika Dwi Septiawati</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/14Vvkqhhgto9gwmFdgrDXpKKBT67-i3JG?usp=drive_link' + location.search)">12. Ineu Siti Anisah</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1a3hbleNkZJnJi6R9ZO9hVKLw2ZoJXCfY?usp=drive_link' + location.search)">13. Cica Erayani Jatnika</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1PhbOA7GC_SbV6Mk-VxcwkCJxlm4nn7kU?usp=drive_link' + location.search)">14. Ani Rinawati</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1HX6T3rjpQpDu18fg-VGWXtCQNpJD5jPs?usp=drive_link' + location.search)">15. Anggraeni Wulandari</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1tNcKL8IwvdfRJLmbCXVtGKt2ltZ6g2Ou?usp=drive_link' + location.search)">16. Deasi Sri Wahyuni</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1GDyHu6qxScQ0B9Jic70rbPHCk593UFsZ?usp=drive_link' + location.search)">17. Atikah Yuliana</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1BPXFoTRDukJU7uvgyUU0nQJfv5qLtAZZ?usp=drive_link' + location.search)">18. Waty Rahmawati</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1rR2l3Rxdmm_HGWjb0USOK7IUXVkr2i0h?usp=drive_link' + location.search)">19. Irma Lestari</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1O8Deq-NdziASuLl23SQk4D4AJCLowaVG?usp=drive_link' + location.search)">20. Nurwilan Genary Harahap</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1gM1P1uJbWS4_FyixjyrUd1o2nyRgBdA0?usp=drive_link' + location.search)">21. Desi Helvina</a></li>
 
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KFcTsbkvs_Rcmu70ZZeg8uxgMgTqPUX5?usp=drive_link' + location.search)">22. dr. Desti Wijayanti Astuti,</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1RGO8jnZFDqEx_gPbiIzsvEyFDcLe-eaG?usp=drive_link' + location.search)">23. Dicky Prasetyo,</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1vhfkKI_oBgR3ZDUzLVHXqV977MUcjCUQ?usp=drive_link' + location.search)">24. Yusvi Rohimatusyifa,</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1WuuOXKbkxsXw0mb0VJsgJz4jYdZzqNyo?usp=drive_link' + location.search)">25. drg.Wulan kartika,</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1pbTbZfTEFbMh7wyd-jU8usa4qLlFH4bm?usp=drive_link' + location.search)">26. Fajar Erlangga,</a></li>
-    <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1tobubnlVUeyhVPYRrJlwD7MtgsaHpVRr?usp=drive_link' + location.search)">27. Siti Silvia Lestari,</a></li>
+  
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1tobubnlVUeyhVPYRrJlwD7MtgsaHpVRr?usp=drive_link' + location.search)">27. Siti Silvia Lestari,</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1zIiRV9KGknJ49bdmJ9ZwXh3QhAN-79zD?usp=drive_link' + location.search)">28. Sri Yudha Wiyanti</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ZpPK53z_D2YNpnhi_8WdgF57XXIluf1s?usp=drive_link' + location.search)">29. Indah Nurhayati,</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1agYRfVc3rwiIMvwIYvffAEHroa0gyFCu?usp=drive_link' + location.search)">30. Dahlia Rizkia Solihati,</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/17hzpowoEBpXKffgAtAdxOdjYSD_qdxPu?usp=drive_link' + location.search)">31. Ade Subarna,</a></li>  
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/186SkuAy59RqgctsC1a3RqkXhvusStXW7?usp=drive_link' + location.search)">32. Dian Herdiani,</a></li>
+  
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1diTb_9U1smMMo2YPqyl4Sb9ZnZsxttqx?usp=drive_link' + location.search)">33. Siti Ghina Kaamilah,</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1N0bcXeAlvhBxdNlhaXngwBTZkPmiK_bz?usp=drive_link' + location.search)">34. Ida Herawati</a></li>
   
   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1WSxQDwqCXTkMYichgyPyp4rwqgTFxr6Q?usp=sharing' + location.search)">35. Rima Mariama,</a></li>
   
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1oTQkfonyLvQh9b74yLus52r6tgbiMq-o?usp=sharing' + location.search)">36. Risma Rahmawati,</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1oTQkfonyLvQh9b74yLus52r6tgbiMq-o?usp=sharing' + location.search)">36. Risma Rahmawati,</a></li>
     
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/17g5J11R0d1wvWz0Ajz_G46vOJOWzO2yi?usp=sharing' + location.search)">37. Madinah Rahman,</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/17g5J11R0d1wvWz0Ajz_G46vOJOWzO2yi?usp=sharing' + location.search)">37. Madinah Rahman,</a></li>
         
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1AC0sND1m22X7xmNs3ZYukaI5fvQ5BlVG?usp=sharing' + location.search)">38. Winna Lianawati,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1AC0sND1m22X7xmNs3ZYukaI5fvQ5BlVG?usp=sharing' + location.search)">38. Winna Lianawati,.</a></li>
         
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1HohO-6MvbGgPAtJxaKBkECE29kwiEs03?usp=sharing' + location.search)">39. R. Gita Nadia Putri,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1HohO-6MvbGgPAtJxaKBkECE29kwiEs03?usp=sharing' + location.search)">39. R. Gita Nadia Putri,.</a></li>
    
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1gPYSlPHaN1QBBqpHLojeva-kIMvsLVUz?usp=sharing' + location.search)">40. Mira Allawiyah,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1gPYSlPHaN1QBBqpHLojeva-kIMvsLVUz?usp=sharing' + location.search)">40. Mira Allawiyah,.</a></li>
    
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ISLPi3Tg5zwb8q2ACFqafQ6MArrnnbHx?usp=sharing' + location.search)">41. Dian Herdiana Susanto,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ISLPi3Tg5zwb8q2ACFqafQ6MArrnnbHx?usp=sharing' + location.search)">41. Dian Herdiana Susanto,.</a></li>
    
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1r7IY-KCgR3RoPcEkkeLF7LaeOLomN3VA?usp=sharing' + location.search)">42. Irmawati,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1r7IY-KCgR3RoPcEkkeLF7LaeOLomN3VA?usp=sharing' + location.search)">42. Irmawati,.</a></li>
 
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1E4vub4UcmF1NuP0LfijxLqSENzETjrWN?usp=sharing' + location.search)">43. Syamsu Rizal,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1E4vub4UcmF1NuP0LfijxLqSENzETjrWN?usp=sharing' + location.search)">43. Syamsu Rizal,.</a></li>
 
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1TGyJcE24iYhEN_yeuubePfJd0EbnlL3W?usp=sharing' + location.search)">44. Neng Masripah,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1TGyJcE24iYhEN_yeuubePfJd0EbnlL3W?usp=sharing' + location.search)">44. Neng Masripah,.</a></li>
    
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/10V6dBO6qFOG3m7lFg7TV0XNFnYP8JXWH?usp=sharing' + location.search)">45. Iksan Jaya Saputra,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/10V6dBO6qFOG3m7lFg7TV0XNFnYP8JXWH?usp=sharing' + location.search)">45. Iksan Jaya Saputra,.</a></li>
   
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1cpzyArfQ4WDEXWb4Nd50ubEaDnbN386h?usp=sharing' + location.search)">46. Rina Siti Nur Komalasari,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1cpzyArfQ4WDEXWb4Nd50ubEaDnbN386h?usp=sharing' + location.search)">46. Rina Siti Nur Komalasari,.</a></li>
 
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1YQ_4a--kM7hfE2y9zXE_5PB3dugU6nlj?usp=sharing' + location.search)">47. Gunawan,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1YQ_4a--kM7hfE2y9zXE_5PB3dugU6nlj?usp=sharing' + location.search)">47. Gunawan,.</a></li>
 
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1uhFGpIuWvOr5YpXmwA9c66zVNaWEkNiw?usp=sharing' + location.search)">48. Tedi Agustendi,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1uhFGpIuWvOr5YpXmwA9c66zVNaWEkNiw?usp=sharing' + location.search)">48. Tedi Agustendi,.</a></li>
 
-   <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1vRmnpjsG3JSpbe2yVaJQX76FL7nUlrd_?usp=sharing' + location.search)">49. Dede Abdurohman,.</a></li>
+  <li><a class="afterclick" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1vRmnpjsG3JSpbe2yVaJQX76FL7nUlrd_?usp=sharing' + location.search)">49. Dede Abdurohman,.</a></li>
    
-   
+  
+  
+  
 </ul>
-
-
-<script>
-function myFunction1() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "inline";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-};
-
-//change color a elemnet
-$(".afterclick").click(function (){
-    $(this).css("color","darkgreen")
-    $(this).css("font-weight","bold")
-});
-</script>
-
-
-  </div>
 </div>
 </div>
-
-
-</div> <!-- ASN -->
-
-
+</div>
+</div> <!-- End ASN -->
 
 
 
-<div id="CategoryNonASN" class="tampil" style="display: none;"><!-- NonASN -->
-
+<!-- KATEGORI NONASN -->
+<div id="CategoryNonASN" class="tampil" style="display: none;">
 <div style="margin-top:94px;">
-    
-    
-    
-    
-    
-<!-- carusel link by name -->
 <div class="container">
-
   <div id="myCarousel2" class="carousel slide" data-ride="carousel" style="background-color:white;">
-    <!-- Indicators
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol> -->
-
-    <!-- Wrapper for slides <img src="chicago.jpg" alt="Chicago" style="width:100%;"> -->
     <div class="carousel-inner center">
-      
+    
       <div class="item">
-        <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KOaOvzJz4jxmuIGeGsniYhavO_62E-NZ?usp=sharing' + location.search)">01. Muthia Khusnul Khotimah</a>
+        <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KOaOvzJz4jxmuIGeGsniYhavO_62E-NZ')">01. Muthia Khusnul Khotimah</a>
       </div>
       
       <div class="item">
         <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/114tIGIaw0CWdxcQDkq5qkpNtvEYOKw_t?usp=sharing' + location.search)">02. Neng Yunita Hamdani Putri</a>
       </div>
       
-      <div class="item active">
+      <div class="item">
         <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1Qb6d_N0jWvzsiGJuCjEqVRV1DEk76jlf?usp=sharing' + location.search)">03. M Irgi Fauzi</a>
       </div>
       
-      <div class="item">
+      <div class="item active">
         <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1dN8Iul21jOjG2C2NKzFiscZeUJPv-Eox?usp=sharing' + location.search)">04. Ardi</a>
       </div>
 
@@ -640,59 +538,236 @@ $(".afterclick").click(function (){
         <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1IlwqHdKzcZD_TC9t1FIThyglwqBp4l52?usp=sharing' + location.search)">06. Ahmad Maulana Ridwan</a>
       </div>
       
+      <div class="item">
+        <a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1HLn35EZ6YApMM1FC7M9S1H5V0_vCapyJ?usp=sharing' + location.search)">07. Indah Dwi Nurpani</a>
+      </div>
       
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
-      <span style="font-size:20px" class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
-      <span style="font-size:20px" class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <a class="left carousel-control" href="#myCarousel2" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel2" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
 </div>
 
-
-
-
-
-<!-- list link by name and search item in content ul -->
 <div class="container">
 <div class="text-center" style="background-color:rgba(0,0,0,.0001);color:#450202;border: 1px solid cyan;font-weight:bold;">
-  <span style="color:White;">Google Drive<br>
-  Links - <b>NonASN</b></span>
-  </div>
-  <div class="list-group">
-  
-
-
-<input type="text" id="myInput2" onkeyup="myFunction2()" autocomplete="off" placeholder="Search for names . . ." title="Type name / Filter name">
-
-<ul id="myUL2" style="display:;">
+  <span style="color:White;">Google Drive<br>Links - <b>NonASN</b></span>
+</div>
+<div class="list-group">
+<input type="text" id="myInput2" onkeyup="myFunction2()" autocomplete="off" placeholder="Search for names . . .">
+<ul id="myUL2">
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1KOaOvzJz4jxmuIGeGsniYhavO_62E-NZ?usp=sharing' + location.search)">01. Muthia Khusnul Khotimah
   <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" class="img-thumbnail zoom1" align="center" alt="pkmmuka"/>
   </a></li>
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/114tIGIaw0CWdxcQDkq5qkpNtvEYOKw_t?usp=sharing' + location.search)">02. Neng Yunita Hamdani Putri
-  <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" class="img-thumbnail zoom1" align="center" alt="pkmmuka"/>
   </a></li>
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1Qb6d_N0jWvzsiGJuCjEqVRV1DEk76jlf?usp=sharing' + location.search)">03. M Irgi Fauzi</a></li>
   
-  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1dN8Iul21jOjG2C2NKzFiscZeUJPv-Eox?usp=sharing' + location.search)">04. Aldi</a></li>
+  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1dN8Iul21jOjG2C2NKzFiscZeUJPv-Eox?usp=sharing' + location.search)">04. Ardi</a></li>
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1EVJZZNYKYWcyguCsIoV8dqGbofy-hj4y?usp=sharing' + location.search)">05. Rezza Alpina Rindu</a></li>
 
   <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1IlwqHdKzcZD_TC9t1FIThyglwqBp4l52?usp=sharing' + location.search)">06. Ahmad Maulana Ridwan</a></li>
   
+  <li><a class="afterclick2" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1HLn35EZ6YApMM1FC7M9S1H5V0_vCapyJ?usp=sharing' + location.search)">07. Indah Dwi Nurpani</a></li>
+  
 </ul>
+</div>
+</div>
+</div>
+</div> <!-- End NonASN -->
+
+
+
+<!-- KATEGORI PROG (TAMBAHAN BARU) -->
+<div id="CategoryPROG" class="tampil" style="display: none;">
+<div style="margin-top:94px;">
+<div class="container">
+  <div id="myCarousel3" class="carousel slide" data-ride="carousel" style="background-color:white;">
+    <div class="carousel-inner center">
+    
+      <div class="item active">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hWfo2fDdVT5H88hA7VbZ80BTwiTPt0LU?usp=drive_link')">01. KIA - KB</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hdLY1YfEH4pEyuIPAeoKpCQCXqw_Vjut?usp=drive_link')">02. AUSREM</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hmydlx2geRQsQyukdehvpTMGqdRMtzOw?usp=drive_link')">03. LANSIA</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1huFxJmH0LoyZjsF29fgdDAz6_sX22UA1?usp=drive_link')">04. IMUNISASI</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hwMjL4h32eNB0h0ragwCiWTN5-eXKrXA?usp=drive_link')">05. PTM</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hxFdPGo1KCHnvESaBvVJrLyK3wR4cvaz?usp=drive_link')">06 Surveilans</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hz7WYTGnbv7OnJP-5rXF68BU_lUKUb-v?usp=drive_link')">07 UKGS UKOM</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1i3Gck6XExx7AnFFiCEfkl9hYH0IOdn3_?usp=drive_link')">08 KesWa</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1i8fQ6KSdEkzL9Y0eo7dnUr4SF7pOWS17?usp=drive_link')">09 KesOrga</a>
+      </div>
+
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iDieXSi4AT5X8mjpmRRu7mLLT97BkUGo?usp=drive_link')">10 KesIndra</a>
+      </div>
+
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iEEVx8-U1CFgvQlu7Y_Cf3rQI-bZkyOE?usp=drive_link')">11 KesTerad</a>
+      </div>
+
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iN4QzvdDZXQAS6qy6_BGCDbVG52rGK6b?usp=drive_link')">12 Hepatitis - 1</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iYulbFRe4V5_e_mMukg8VStkRnFh0wFo?usp=drive_link')">13 IspaDiare</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ic2sWdtx93qk3wLi7ZqA3kik_Y7xaiE8?usp=drive_link')">14 Frambusia-Kusta-2</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ipowkDCZ0d6ph9cGKurbznDcfWAbIQRL?usp=drive_link')">15 Tuberculosis</a>
+      </div>
+
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ivMEzXjQPW4Ug01lQsN5TOHgZ23-v7NM?usp=drive_link')">16 KesLing</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1j6dJvjvnZNIOLGUeZ1hZaXzodPYp9s7X?usp=drive_link')">17 Gizi</a>
+      </div>
+      
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1jCJQH4WG1_trJNUu3cm8nyhSwD4qvoBX?usp=drive_link')">18 HIV</a>
+      </div>
+
+      <div class="item">
+        <a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1jGfEEAK7qLk4WtH7ZCxhLCdv3WdB0nXn?usp=drive_link')">19 PromKes</a>
+      </div>
+
+
+    </div>
+    <a class="left carousel-control" href="#myCarousel3" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel3" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  </div>
+</div>
+
+<div class="container">
+<div class="text-center" style="background-color:rgba(0,0,0,.0001);color:#450202;border: 1px solid cyan;font-weight:bold;">
+  <span style="color:White;">Google Drive<br>Links - <b>Program</b></span>
+</div>
+<div class="list-group">
+<input type="text" id="myInput3" onkeyup="myFunction3()" autocomplete="off" placeholder="Search for PROG names . . .">
+<ul id="myUL3">
+
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hWfo2fDdVT5H88hA7VbZ80BTwiTPt0LU?usp=drive_link')">01 KIA - KB
+    <img src="https://dl.dropboxusercontent.com/s/ywq5kn0sbyxesysgg9u75/Logo_Pkm_Muka_tanpa_UPTD-removebg-preview.png?rlkey=zd09dmvfdz55rkmotko23lws3&st=w6mq3ppl&dl=0" class="img-thumbnail zoom1" align="center" alt="pkmmuka"/>
+  </a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hdLY1YfEH4pEyuIPAeoKpCQCXqw_Vjut?usp=drive_link')">02 Anak Usia Sekolah, Remaja</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hmydlx2geRQsQyukdehvpTMGqdRMtzOw?usp=drive_link')">03 LANSIA</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1huFxJmH0LoyZjsF29fgdDAz6_sX22UA1?usp=drive_link')">04 Imunisasi</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hwMjL4h32eNB0h0ragwCiWTN5-eXKrXA?usp=drive_link')">05 Penyakit Tidak Menular(PTM)</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hxFdPGo1KCHnvESaBvVJrLyK3wR4cvaz?usp=drive_link')">06 Surveilans</a></li>
+
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1hz7WYTGnbv7OnJP-5rXF68BU_lUKUb-v?usp=drive_link')">07 UKGS UKOM</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1i3Gck6XExx7AnFFiCEfkl9hYH0IOdn3_?usp=drive_link')">08 Kes Jiwa</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1i8fQ6KSdEkzL9Y0eo7dnUr4SF7pOWS17?usp=drive_link')">09 Kes Olahraga</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iDieXSi4AT5X8mjpmRRu7mLLT97BkUGo?usp=drive_link')">10 Kes Indra</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iDieXSi4AT5X8mjpmRRu7mLLT97BkUGo?usp=drive_link')">11 Kes Tradisional - BaTra</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iN4QzvdDZXQAS6qy6_BGCDbVG52rGK6b?usp=drive_link')">12 Hepatitis</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1iYulbFRe4V5_e_mMukg8VStkRnFh0wFo?usp=drive_link')">13 Ispa Diare</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ic2sWdtx93qk3wLi7ZqA3kik_Y7xaiE8?usp=drive_link')">14 Frambusia Kusta</a></li>
+
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ipowkDCZ0d6ph9cGKurbznDcfWAbIQRL?usp=drive_link')">15 Tuberculosis (TB)</a></li>
+
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1ivMEzXjQPW4Ug01lQsN5TOHgZ23-v7NM?usp=drive_link')">16 KesLing</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1j6dJvjvnZNIOLGUeZ1hZaXzodPYp9s7X?usp=drive_link')">17 Gizi</a></li>
+  
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1jCJQH4WG1_trJNUu3cm8nyhSwD4qvoBX?usp=drive_link')">18 HIV</a></li>
+
+  <li><a class="afterclick3" style="cursor:pointer" onclick="window.open('https://drive.google.com/drive/folders/1jGfEEAK7qLk4WtH7ZCxhLCdv3WdB0nXn?usp=drive_link')">19 PromKes</a></li>
+
+
+
+</ul>
+</div>
+</div>
+</div>
+</div> <!-- End PROG -->
+
+
+
+
+
+<div class="footer" style="margin-top:68px;">
+    <div class="col text-center" style="background-color:lavenderblush;">
+      <span style="padding:2px;font-size:9px;"><b>&#9829; &#9829; Puskesmas Muka @ 54n &#9829; &#9829;</b></span><br/>
+    </div>
+</div>
+
 
 
 <script>
+// Logic Switch Tab
+$(document).ready(function() {
+    $("input[name$='Pegawai']").click(function() {
+        var tampildaftar = $(this).val();
+        $("div.tampil").hide();
+        $("#Category" + tampildaftar).show();
+    });
+});
+
+// Search Function ASN
+function myFunction1() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+// Search Function NonASN
 function myFunction2() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput2");
@@ -703,180 +778,50 @@ function myFunction2() {
         a = li[i].getElementsByTagName("a")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "inline";
+            li[i].style.display = "";
         } else {
             li[i].style.display = "none";
         }
     }
-};
-
-//change color a elemnet
-$(".afterclick2").click(function (){
-    $(this).css("color","darkblue")
-    $(this).css("font-weight","bold")
-});
-</script>
-
-
-
-<style>  
-/* Start id NonASN */
-#myInput2 {
-  background-image: url('https://www.w3schools.com/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 15px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 1px;
-  margin-top: 1px;
-  text-align: center;
-  
-/*  background-position: left;*/
-
-  background-repeat: no-repeat;
-
 }
 
-#myUL2 {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+// Search Function PROG
+function myFunction3() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput3");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL3");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
 
-#myUL2 li a {
-  border: 1px solid #ddd;
-  margin-top: 10px; /* Prevent double borders */
-  margin-bottom: 10px; 
-  background-color: #fdfdfd;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 17px;
-  color: black;
-  display: block
-}
+// Click Effect
+$(".afterclick").click(function (){ $(this).css({"color":"darkgreen","font-weight":"bold"}); });
+$(".afterclick2").click(function (){ $(this).css({"color":"darkblue","font-weight":"bold"}); });
+$(".afterclick3").click(function (){ $(this).css({"color":"purple","font-weight":"bold"}); });
 
-#myUL2 li a:hover:not(.header) {
-  background-color: #eee;
-  font-size: large;
-}
-
-/*ul {
-    width:100%;
-    margin-left: 0;
-    margin-bottom: 0
-} 
-
-li { 
-     list-style-type: none;
-    display: inline-block;
-    margin-right: 20px;
-}
-*/
-
-/* End id NonASN */
-
-</style>
-
-
-
-  </div>
-</div>
-</div>
-        
-</div> <!-- NonASN -->
-
-
-
-
-
-  <!-- Footer element item -->
-<div class="footer" style="margin-top:68px;">
-
-    <div class="col text-center" style="background-color:lavenderblush;">
-      <span style="padding:2px;font-size:9px;"><b>&#9829; &#9829; Puskesmas Muka @ 54n &#9829; &#9829;
-      </b><!-- title=" - - &#9829;  UPTD Puskesmas Muka @ 54n - - WiTH &#9829; - - " -->
-      </span><br/>
-      
-    </div>
-
-</div>
-<!-- Footer element item -->
-
-
-
-
-
-<!-- hide or show radiobutton ASN or NonASN -->
-<script>
-$(document).ready(function() {
-    $("input[name$='Pegawai']").click(function() {
-        var tampildaftar = $(this).val();
-
-        $("div.tampil").hide();
-        $("#Category" + tampildaftar).show();
-    });
-});
-</script>
-
-
-<script>
-function display_c(){
-var refresh=1500; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct()',refresh)
-}
-
+// Clock Function
 function display_ct() {
-var x = new Date()
-//nonactiv document.getElementById('ct').innerHTML = x;
-
-var x1=x.toUTCString();// changing the display to UTC string
-//nonactiv document.getElementById('ct1').innerHTML = x1;
-var x2=x.getMonth() +1 + "/" + x.getDate() + "/" + x.getFullYear(); 
-x2 = x2 + " - " +  x.getHours( )+ " : " +  x.getMinutes() + " : " +  x.getSeconds();
-////////////////////////
-
-// date part ///
-var month=x.getMonth()+1;
-var day=x.getDate();
-var year=x.getFullYear();
-if (month <10 ){month='0' + month;}
-if (day <10 ){day='0' + day;}
-var x13= day+' - '+month+' - '+year;
-
-// time part //
-var hour=x.getHours();
-var minute=x.getMinutes();
-var second=x.getSeconds();
-if(hour <10 ){hour='0'+hour;}
-if(minute <10 ) {minute='0' + minute; }
-if(second<10){second='0' + second;}
-var x3 = '&nbsp;' +x13 + ' _<span class="glyphicon glyphicon-download-alt"></span>_ ' +  hour+' : '+minute+' : '+second+'&nbsp;';
-/////////////////
-
-//nonactiv document.getElementById('ct2').innerHTML = x2;
-//nonactiv document.getElementById('t1').value = x;
-
-//nonactiv document.getElementById('ct3').style.fontSize='30px';
-//nonactiv document.getElementById('ct3').style.color='#0030c0';
-//nonactiv document.getElementById('ct3').innerHTML = x2;
-document.getElementById('ct4').innerHTML = x3;
-//display_c();
- };
- 
- setInterval(function() {
-    display_c();
-}, 1000);
+    var x = new Date();
+    var day=x.getDate(); var month=x.getMonth()+1; var year=x.getFullYear();
+    if (month<10) month='0'+month; if (day<10) day='0'+day;
+    var x13= day+' - '+month+' - '+year;
+    var hour=x.getHours(); var minute=x.getMinutes(); var second=x.getSeconds();
+    if(hour<10) hour='0'+hour; if(minute<10) minute='0'+minute; if(second<10) second='0'+second;
+    var x3 = '&nbsp;' +x13 + ' _<span class="glyphicon glyphicon-download-alt"></span>_ ' +  hour+' : '+minute+' : '+second+'&nbsp;';
+    document.getElementById('ct4').innerHTML = x3;
+    setTimeout(display_ct, 1000);
+}
+display_ct();
 </script>
-
-<!-- edit info in jseditor.io -->
 
 </body>
 </html>
-
-
-
-
-
-
